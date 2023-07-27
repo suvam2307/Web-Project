@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube-clone</title>
+    <style>
+        .container{
+            background-color:rgb(102, 101, 101);
+            display:grid;
+            height:100%;
+            width:100%;
+            gap:3px;
+            grid-template-columns: 1fr 5fr ;
+            grid-template-rows:1fr 6fr;
+        }
+        .head-container{
+            grid-area: 1/1/2/3;
+            display:flex; 
+            background-color: black;
+            justify-content: flex-start;
+            align-items: center;
+            position:static;
+            gap:2vw;
+            flex-wrap: nowrap;
+        }
+       
+        .right-container{
+            background-color: black;
+            grid-area:2/2/3/3;
+        }
+        .start{
+            margin:10px;
+            margin-top:20px;
+            
+            display:inline-flex;
+            gap: 6px;
+            flex:1;
+           
+        }
+        
+       .icons{
+        display:inline-flex;
+        background-color: black;
+        border-radius: 50%;
+       }
+        
+        .btn{
+            background-color: #000000;
+            border-radius: 49%;
+            cursor:pointer;
+        }
+       .btn:hover{
+        background-color: rgb(104, 50, 129);
+       }
+       
+      
+       /*search container css */
+       .search-container {
+        display: flex;
+        flex:6;
+
+        justify-content:flex-start;
+        align-items: center;
+       min-width: 20vw;
+        max-width: 70vw;
+        margin: 0 auto;
+        margin-left: 5vw;
+      }
+      
+      .search-input {
+        padding: 10px;
+        width: 70%;
+        font-size: 16px;
+        border-radius: 15px;
+        background-color: black;
+      }
+      
+    
+      .search-input:focus {
+        outline: none;
+        border-color:blueviolet;
+        background-color: rgb(49, 56, 54);
+      }
+      
+      .search-button:hover {
+        background-color:rgb(59, 59, 59);
+      }
+      /* css for end div*/
+      .end{
+        flex:2;
+        margin-top: 4vh;
+        margin-left: 2vw;
+        display:inline-flex;
+        gap:1vw;
+        max-width:30vw;
+      }
+
+
+
+      /*css styles for the left container */
+      .left-container{
+        background-color: gray;
+        grid-area: 2/1/3/2;
+        display:flex;
+        flex-direction: column;
+        gap: 2px;
+
+    }
+    /* css for home-content */
+    .home-content{
+        background-color: #000000;
+        flex:1;
+        display:flex;
+        flex-direction: column;
+        gap:1px;
+    }
+    
+    .listing{
+       
+        flex:1;
+        background-color: black;
+        border-radius: 10px;
+        display:flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap:1vw;
+
+    }
+    .listing:hover{
+        background-color: gray;
+    }
+
+    .icon-desc{
+        font-size:2vh;
+        font-weight: bold;
+        color: white;
+    }
+
+
+    .videolibraries{
+        background-color: black;
+        flex:2;
+        display:flex;
+        flex-direction: column;
+        
+    }
+    .explore{
+        background-color: #000000;
+        flex:3;
+        display:flex;
+        flex-direction: column;
+    }
+    .settings{
+        background-color: #000000;
+        flex:1;
+        display: flex;
+        flex-direction: column;
+
+
+    }
+    .footer{
+        flex:1;
+        background-color: #000000;
+    }
+    .footer footer{
+        color:aliceblue;
+        font-size: small;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    /*css for the videos */
+    .right-container{
+        background-color: gray;
+        display:grid;
+        gap:1px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .video{
+        background-color: #000000;
+        display:grid;
+        grid-template-columns:1fr 5fr;
+        grid-template-rows: 4fr  1fr;
+        border-radius: 10px;
+    }
+    .image{
+        grid-area: 1/1/2/3;
+    }
+    .logo{
+        grid-area: 2/1/3/2;
+    }
+    .desc{
+        background-color: #000000;
+        color: rgb(200, 203, 206);
+        grid-area: 2/2/3/3;
+    }
+    .flex-shorts{
+        background-color:black;
+        grid-area: 3/1/4/4;
+        display:flex;
+        gap:2px;
+    }
+    .short{
+        flex:1;
+        background-color: beige;
+        border-radius:10px;
+    }
+a{
+    text-decoration: none;
+    text-decoration-color: aquamarine;
+}
+   
+    
+    .heading{
+        display:flex;
+        justify-content: center;
+        margin:0;
+        padding: 0;
+    }
+      
+    .video img {
+        height:36vh;
+        width:29vw;
+    }
+
+         
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head-container">
+            <div class="start">
+               <div class="icons">
+                <button class="btn">
+                    <img src="./assets/hamburger (2).png" alt="">
+                </button>
+            </div>
+                <img src="./assets/youtube (3).png" alt="youtube">
+                <div class="icons">
+                    <img src="./assets/social.png" alt="">
+                </div>
+            </div>
+
+            
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-input">
+                    <div class="icons"><button type="submit" class="search-button btn"><img src="./assets/loupe.png" alt="">j</button></div>
+                  </div>
+            
+             
+
+            <div class="end">
+                <div class="icon"><button class="btn">
+                    <img src="./assets/video.png" alt="create">
+                </button></div>
+                <div class="icon"><button class="btn">
+                    <img src="./assets/bell (1).png" alt="notification">
+                </button></div>
+                <div class="icon"><button class="btn">
+                    <img src="./assets/user.png" alt="profile">
+                </button></div>
+            </div>
+        </div>
+        <!-- left container code starts heree  -->
+        <div class="left-container">
+            <div class="home-content">
+                <div class="listing" id="home"> 
+                    <img src="./assets/home (4).png" alt="home">
+                    <p class="icon-desc">Home</p>
+                </div>
+                <div class="listing" id="short_list">
+                    <img src="./assets/video (1).png" alt="create">
+                    <p class="icon-desc">Shorts</p>
+                </div>
+                <div class="listing" id="subsription">
+                    <img src="./assets/subscribe.png" alt="subsscribe">
+                    <p class="icon-desc">Subscription</p>
+
+                </div>
+            </div>
+            <div class="videolibraries">
+                <!-- video libraries -->
+                <div class="listing" id="library">
+                    <img src="" alt="">
+                    <p class="icon-desc">Libraries</p>
+                </div>
+                <div class="listing" id="history">
+                    <img src="" alt="">
+                    <p class="icon-desc">History</p>
+                </div>
+                <div class="listing" id="watch-latter">
+                    <img src="" alt="">
+                    <p class="icon-desc">watch-latter</p>
+                </div>
+                <div class="listing" id="downloads">
+                    <img src="" alt="">
+                    <p class="icon-desc">Downloads</p>
+                </div>
+                <div class="listing" id="your-videos">
+                    <img src="" alt="">
+                    <p class="icon-desc">Your Videos</p>
+                </div>
+            </div>
+            <div class="explore">
+                <!-- explore class -->
+                <h5 class="icon-desc heading">Explore</h5>
+                <div class="listing" id="game">
+                    <img src="" alt="">
+                    <p class="icon-desc">Gaming</p>
+                </div>
+                <div class="listing" id="music">
+                    <img src="" alt="">
+                    <p class="icon-desc">Music</p>
+                </div>
+                <div class="listing" id="movie">
+                    <img src="" alt="">
+                    <p class="icon-desc">Movie</p>
+                </div>
+                <div class="listing" id="shoping">
+                    <img src="" alt="">
+                    <p class="icon-desc">Shoping</p>
+                </div>
+                <div class="listing" id="news">
+                    <img src="" alt="">
+                    <p class="icon-desc">News</p>
+                </div>
+                <div class="listing" id="learning">
+                    <img src="" alt="">
+                    <p class="icon-desc">Learning</p>
+                </div>
+
+            </div>
+            <div class="settings">
+                <!-- settings code -->
+                <div class="listing" id="setting">
+                    <img src="" alt="">
+                    <p class="icon-desc">Setting</p>
+                </div>
+                <div class="listing" id="report-history">
+                    <img src="" alt="">
+                    <p class="icon-desc">Report History</p>
+                </div>
+                <div class="listing" id="help">
+                    <img src="" alt="">
+                    <p class="icon-desc">Help</p>
+                </div>
+                <div class="listing" id="feedback">
+                    <img src="" alt="">
+                    <p class="icon-desc">Send Feedback</p>
+                </div>
+
+            </div>
+            <div class="footer">
+                <footer>@All The content belongs to fewtube so please take it seariously . and enjoy all the content that we have for  you.  </footer>
+            </div>
+        </div>
+        <!-- right-container codes -->
+        <div class="right-container">
+            
+            <a href="./videos/video1.html"> 
+                <div class="video" id="one">
+                    <img  class="image"src="./video-thumbnail/jan-valecka-6SMIS29eRSk-unsplash.jpg " alt="" height="60px">
+                    
+                    <p class="desc">A video on the travelling and tourism .</p>
+                </div>
+            </a>
+                <div class="video" id="two"></div>
+                <div class="video" id="three"></div>
+                <div class="video" id="four"></div>
+                <div class="video" id="five"></div>
+                <div class="video" id="six"></div>
+            
+               <div class="flex-shorts">
+                <div class="short" id="s1"></div>
+                <div class="short" id="s2"></div>
+                <div class="short" id="s3"></div>
+                <div class="short" id="s4"></div>
+                <div class="short" id="s5"></div>
+                <div class="short" id="s6"></div>
+               </div>
+        </div>
+    </div>
+</body>
+</html>
