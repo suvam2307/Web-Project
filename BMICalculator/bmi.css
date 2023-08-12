@@ -1,0 +1,38 @@
+.bod{
+    background: #3BBCCB;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height:100vh;
+    
+}
+
+.cal{
+border:20px solid whitesmoke;
+border-radius:5%;
+height:500px;
+width: 200px;
+text-shadow: 0cqb;
+background-color:#182844;
+display:flex;
+flex-direction: column;
+gap:5px;
+}
+.visble{
+    background: white;
+    height:40px;
+    width: 200px;
+
+}
+.calculate{
+    background-color:#7577A2 ;
+    width: 100px; 
+}
+.reset{
+    background-color:#7577A2 ;
+    width: 100px;
+
+}
+button:hover{
+background-color:#6C6FAB;
+}
